@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/srm?useUnicode=true&characterEncoding=utf-8&useSSL=false&tinyInt1isBit=false}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:wuyujian1999}
+
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+#  server.port=7000
+#  # 服务名
+#  spring.application.name=service-gateway
+#  # nacos服务地址
+#  spring.cloud.nacos.discovery.server-addr=127.0.0.1:8848
+#
+#  #使用服务发现路由
+#  spring.cloud.gateway.discovery.locator.enabled=true
+#
+#  #设置路由id
+#  spring.cloud.gateway.routes[0].id=service-user
+#  #设置路由的uri
+#  spring.cloud.gateway.routes[0].uri=lb://service-user
+#  #设置路由断言,代理servicerId为auth-service的/auth/路径
+#  spring.cloud.gateway.routes[0].predicates= Path=/*/user/**
+#
+#  #设置路由id
+#  spring.cloud.gateway.routes[1].id=service-dict
+#  #设置路由的uri
+#  spring.cloud.gateway.routes[1].uri=lb://service-dict
+#  #设置路由断言,代理servicerId为auth-service的/auth/路径
+#  spring.cloud.gateway.routes[1].predicates= Path=/*/dict/**
